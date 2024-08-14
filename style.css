@@ -10,6 +10,9 @@
     margin: 0;
 }
 
+html {
+    box-sizing: border-box;
+}
 
 .desktop-1{
     background-color: black;
@@ -19,4 +22,22 @@
     font-family: 'Kenia', sans-serif;
     font-size: 150px;
     color: #fff;
+}
+
+.head-menu-list{
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 115px;
+    
+}
+
+.head-links{
+    display: flex;
+    align-items: center;
+    
+}
+
+a {
+    text-decoration: none;
 }
