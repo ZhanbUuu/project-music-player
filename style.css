@@ -1,6 +1,8 @@
 @font-face {
     font-family: 'Kenia'; /* название шрифта */
     src: url('https://fonts.googleapis.com/css?family=Kenia'); /* ссылка на файл шрифта */
+    font-family: 'Istok Web'; /* название шрифта */
+    src: url('https://fonts.googleapis.com/css?family=Istok+Web'); /* ссылка на файл шрифта */
   }  
 
 *,
@@ -10,34 +12,110 @@
     margin: 0;
 }
 
-html {
-    box-sizing: border-box;
-}
-
-.desktop-1{
+.desktop-1 {
     background-color: black;
 }
 
-.body-text-title{
-    font-family: 'Kenia', sans-serif;
-    font-size: 150px;
-    color: #fff;
+/* Стиль для контейнера шапки */
+.head-menu-list {
+    display: flex; /* Делаем элементы внутри контейнера расположенными горизонтально */
+    align-items: center; /* Выравниваем элементы по вертикали по центру */
+    justify-content: flex-start;
+    padding: 20px;
 }
 
-.head-menu-list{
-    max-width: 900px;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 115px;
-    
+/* Стиль для логотипа */
+.logo {
+    margin-left: 115px; /* Отступ справа от логотипа */
+    margin-right: 100px;
 }
 
-.head-links{
+/* Стиль для навигации */
+.head-links ul {
+    display: flex; /* Делаем элементы внутри ul горизонтальными */
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+/* Стиль для элементов навигации */
+.head-links li {
+    margin-right: 100px; /* Устанавливаем расстояние в 100 пикселей между элементами */
+}
+
+/* Последний элемент навигации без отступа справа */
+.head-links li:last-child {
+    margin-right: 0;
+}
+
+/* Стиль для ссылок */
+.head-link {
+    /* font-family: "Istok Web", sans-serif; */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    font-family: "Istok Web", sans-serif; /* Применяем шрифт */
+    font-weight: 400;
+    color: aliceblue; /* Цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    text-transform: uppercase; /* Делаем все буквы заглавными */
+}
+
+.head-link:hover {
+    color: #a75656; /* Цвет текста при наведении */
+}
+
+
+.inner {
     display: flex;
     align-items: center;
-    
+    justify-content: space-between;
+    padding: 50px 100px; /* Отступы вокруг содержимого */
+    position: relative; /* Для правильного позиционирования наушников */
 }
 
-a {
-    text-decoration: none;
+.inner-text {
+    max-width: 40%; /* Ограничиваем ширину текста */
+    color: aliceblue; /* Цвет текста */
+}
+
+.inner-text-title {
+    font-family: 'Kenia', sans-serif; /* Используем ваш шрифт */
+    font-size: 150px; /* Размер шрифта для заголовка */
+    margin: 0; /* Убираем отступы */
+}
+
+.inner-text-line {
+    font-family: 'Istok Web', sans-serif; /* Шрифт для подзаголовка */
+    font-size: 20px; /* Размер шрифта подзаголовка */
+    margin-top: 20px; /* Отступ сверху для подзаголовка */
+}
+
+.inner-img {
+    max-width: 40%; /* Ограничиваем ширину контейнера для изображений */
+    display: flex;
+    justify-content: center; /* Центрируем изображение телефона */
+    align-items: flex-end; /* Выравниваем изображения снизу */
+    position: relative; /* Для позиционирования наушников и кабеля */
+}
+
+.phone {
+    width: 350px; /* Устанавливаем ширину телефона */
+    z-index: 1; /* Телефон на заднем плане */
+    position: relative;
+}
+
+.headphones {
+    position: absolute;
+    left: -600px; /* Сдвиг наушников влево от телефона */
+    bottom: -100px; /* Регулировка положения по вертикали */
+    width: 800px; /* Устанавливаем ширину наушников */
+    z-index: 2; /* Наушники находятся перед телефоном */
+}
+
+.kabel {
+    position: absolute;
+    bottom: 0; /* Положение кабеля в разъеме */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px; /* Устанавливаем ширину кабеля */
+    z-index: 3; /* Кабель выше телефона и наушников */
 }
