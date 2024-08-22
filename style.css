@@ -13,7 +13,7 @@
 }
 
 .desktop-1 {
-    background-color: black;
+    background-image: url(images/pngwing.com.png);
 }
 
 /* Стиль для контейнера шапки */
@@ -70,6 +70,7 @@
     justify-content: space-between;
     padding: 50px 100px; /* Отступы вокруг содержимого */
     position: relative; /* Для правильного позиционирования наушников */
+    overflow: hidden;
 }
 
 .inner-text {
@@ -99,23 +100,36 @@
 
 .phone {
     width: 350px; /* Устанавливаем ширину телефона */
-    z-index: 1; /* Телефон на заднем плане */
+    z-index: 3; /* Телефон на переднем плане */
     position: relative;
 }
 
 .headphones {
     position: absolute;
     left: -600px; /* Сдвиг наушников влево от телефона */
-    bottom: -100px; /* Регулировка положения по вертикали */
+    bottom: -100px; /* Конечное положение наушников */
     width: 800px; /* Устанавливаем ширину наушников */
-    z-index: 2; /* Наушники находятся перед телефоном */
+    z-index: 1; /* Наушники находятся под телефоном */
+    animation: slideUp 2s ease-out forwards; /* Применение анимации */
+}
+
+/* Анимация плавного выезда наушников */
+@keyframes slideUp {
+    from {
+        bottom: -300px; /* Начальная позиция ниже экрана */
+        opacity: 0; /* Прозрачность */
+    }
+    to {
+        bottom: -100px; /* Конечная позиция */
+        opacity: 1; /* Полная видимость */
+    }
 }
 
 .kabel {
     position: absolute;
-    bottom: 0; /* Положение кабеля в разъеме */
-    left: 50%;
+    bottom: -140px; /* Положение кабеля в разъеме */
+    left: 45%;
     transform: translateX(-50%);
-    width: 40px; /* Устанавливаем ширину кабеля */
-    z-index: 3; /* Кабель выше телефона и наушников */
+    width: 250px; /* Устанавливаем ширину кабеля */
+    z-index: 2; /* Кабель под телефоном */
 }
